@@ -138,6 +138,7 @@ class EGPlanner : public QThread
     //! Sets the current state of the planner
     void setState(PlannerState s);
 
+    int mBestListSize;
     //! A list that is normally used to keep track of solutions found so far
     std::list<GraspPlanningState *> mBestList;
     //! Helper function that helps maintain a list of UNIQUE solutions.
@@ -205,6 +206,7 @@ class EGPlanner : public QThread
     void setMaxSteps(int s) {mMaxSteps = s;}
     void setRepeat(bool r) {mRepeat = r;}
     void setMaxTime(int t) {mMaxTime = t;}
+    void setBestListSizeParam(int s) {mBestListSize = s;}
 
     //! Returns the i-th state from the list of solutions mBestList
     virtual const GraspPlanningState *getGrasp(int i);

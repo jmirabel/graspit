@@ -49,8 +49,6 @@
 
 PROF_DECLARE(EG_PLANNER);
 
-#define BEST_LIST_SIZE 20
-
 EGPlanner::EGPlanner(Hand *h)
 {
   mHand = h;
@@ -81,6 +79,7 @@ EGPlanner::init()
   mState = INIT;
   mUsesClone = false;
   mOut = NULL;
+  mBestListSize = 20;
 }
 
 EGPlanner::~EGPlanner()
